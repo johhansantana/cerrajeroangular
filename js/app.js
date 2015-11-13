@@ -1,20 +1,18 @@
 var app = angular.module('cerrajero', ['ngRoute']);
 
 app.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-	$locationProvider.html5Mode(false);
 	$routeProvider.
 		when('/services', {
-			template: 'partials/services.html'
+			templateUrl: '/partials/services.html'
 		}).
 		when('/contact', {
-			template: 'partials/contact.html'
+			templateUrl: '/partials/contact.html'
 		}).
 		when('/home', {
-			template: 'partials/home.html'
+			templateUrl: '/partials/home.html'
 		}).
 		otherwise({
-			redirectTo: '/home',
-			template: 'partials/home.html'
+			redirectTo: '/home'
 		});
 }]);
 
