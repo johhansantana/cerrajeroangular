@@ -1,5 +1,6 @@
-var app = angular.module('cerrajero', ['ngRoute']).
-	config([function ($routeProvider) {
+var app = angular.module('cerrajero', []);
+
+	app.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider.
 			when('/services', {
 				templateUrl: 'partials/services.html'
