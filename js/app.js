@@ -1,18 +1,19 @@
-var app = angular.module('cerrajero', ['ngRoute']);
+var app = angular.module('cerrajero', ['ui.router']);
 
-app.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-	$routeProvider.
-		when('/services', {
-			templateUrl: './partials/services.html'
-		}).
-		when('/contact', {
-			templateUrl: './partials/contact.html'
-		}).
-		when('/home', {
+app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise('/');
+	$stateProvider.
+		state('home', {
+			url: '/',
 			templateUrl: './partials/home.html'
 		}).
-		otherwise({
-			redirectTo: '/home'
+		state('contact', {
+			url: '/contact',
+			templateUrl: './partials/contact.html'
+		}).
+		state('services', {
+			url: '/services',
+			templateUrl: './partials/services.html'
 		});
 }]);
 
